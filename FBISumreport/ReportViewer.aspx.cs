@@ -13,6 +13,7 @@ namespace FBISumreport
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void btnViewReport_Click(object sender, EventArgs e)

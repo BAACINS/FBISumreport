@@ -24,6 +24,7 @@ namespace FBISumreport
 
             string reportName = "CommissionFBIRate";
             string reportPath = "BaaclifeReport";
+
             string ReportServerUrl = "http://lifeuatdb/ReportServer";
 
             //string ReportServerUrl = "http://lifereport/reportserver";

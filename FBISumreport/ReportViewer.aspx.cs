@@ -26,8 +26,8 @@ namespace FBISumreport
             GetPlanAssurance();
 
             string DateNow = DateTime.Now.ToString("dd/MM/yyyy", th);
-            //txtDateFrom.TextDate = DateNow;
-            //txtDateTo.TextDate = DateNow;
+            txtDateFrom.TextDate = DateNow;
+            txtDateTo.TextDate = DateNow;
         }
 
         #region Methods
@@ -156,9 +156,9 @@ namespace FBISumreport
         {
             //http://lifereport/ReportServer/Pages/ReportViewer.aspx //url test report
             //ReportSearchParam reportParam = UCReportSearch1.GetSearchField();
-
-            //DateFrom = DateTime.Parse(txtDateFrom.TextDate.ToString()).ToString("yyyy-MM-dd", us);
-            //DateTo = DateTime.Parse(txtDateTo.TextDate.ToString()).ToString("yyyy-MM-dd", us);
+            C004_Calculator calculator = new C004_Calculator();
+            DateFrom = calculator.SetFormatdate(txtDateFrom.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
+            DateTo = calculator.SetFormatdate(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
 
             string reportName = "CommissionFBIRate";
             string reportPath = "BaaclifeReport";

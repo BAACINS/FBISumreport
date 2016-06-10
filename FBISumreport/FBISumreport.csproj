@@ -135,6 +135,7 @@
     <Compile Include="C001_GetData.cs" />
     <Compile Include="C002_DataAccess.cs" />
     <Compile Include="C003_DatabaseInfo.cs" />
+    <Compile Include="C004_Calculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportServerCredentials.cs" />
     <Compile Include="ReportViewer.aspx.cs">

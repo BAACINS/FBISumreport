@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\Body.css" />
+    <Content Include="Images\hd1.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

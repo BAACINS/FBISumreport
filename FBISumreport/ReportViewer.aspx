@@ -7,15 +7,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="CSS/Body.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" ></asp:ToolkitScriptManager>          
         
-        <div style="width: 100%; text-align: center;" >
-            <asp:Label ID="lblReportHeader" runat="server">รายงานผลการดำเนินงานเงินฝากสงเคราะห์ชีวิต</asp:Label>
+        <div style="margin: 0 auto; max-width: 975px;" class="header" >
+           <h1>รายงานค่าตอบแทนโครงการเงินฝากสงเคราะห์ชีวิต</h1>
         </div>
-        <h1>รายงานผลการดำเนินงานเงินฝากสงเคราะห์ชีวิต</h1>
+       
         <br />
         <div style="margin: auto; width: 950px; border: 2px solid #808080; padding: 10px; overflow: auto;">
             <table style="width: 100%;">
@@ -58,7 +59,7 @@
             </table>
         </div>
         <div>
-            <asp:Button ID="btnViewReport" runat="server" Text="View" Width="76px" OnClick="btnViewReport_Click" />
+            <asp:Button ID="btnViewReport" runat="server" Text="View" Width="76px" OnClick="btnViewReport_Click" Visible="false"/>
         </div>
         <div>
             <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Height="100%"

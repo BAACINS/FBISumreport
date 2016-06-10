@@ -22,6 +22,9 @@
     }
 
 </script>
+<header>
+    <link href="../CSS/Body.css" rel="stylesheet" />
+</header>
 <table border="0" cellpadding="0" cellspacing="0">
     <tr>
         <td style="width: 130px;">

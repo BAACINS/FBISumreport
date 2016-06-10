@@ -19,15 +19,21 @@ namespace FBISumreport
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetRegion();
-            GetProvince();
-            GetBranch();
-            GetPlanCategories();
-            GetPlanAssurance();
+            if (!IsPostBack)
+            {
+                GetRegion();
+                GetProvince();
+                GetBranch();
+                GetPlanCategories();
+                GetPlanAssurance();
 
-            string DateNow = DateTime.Now.ToString("dd/MM/yyyy", th);
-            txtDateFrom.TextDate = DateNow;
-            txtDateTo.TextDate = DateNow;
+                string DateNow = DateTime.Now.ToString("dd/MM/yyyy", us);
+                txtDateFrom.TextDate = DateNow;
+                txtDateTo.TextDate = DateNow;
+            }
+            
+
+            
         }
 
         #region Methods

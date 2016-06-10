@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\TVS\TVS\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -121,6 +124,9 @@
     <Content Include="ReportViewer.aspx" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="UC\Calendar.ascx" />
+    <Content Include="UC\I006_calendar.png" />
+    <Content Include="UC\I007_eraser.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -137,6 +143,13 @@
     </Compile>
     <Compile Include="ReportViewer.aspx.designer.cs">
       <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Calendar.ascx.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UC\Calendar.ascx.designer.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

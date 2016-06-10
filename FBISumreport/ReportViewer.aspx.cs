@@ -99,9 +99,9 @@ namespace FBISumreport
             string reportName = "CommissionFBIRate";
             string reportPath = "BaaclifeReport";
 
-            //string ReportServerUrl = "http://lifeuatdb/ReportServer";
+            string ReportServerUrl = "http://lifeuatdb/ReportServer";
 
-            string ReportServerUrl = "http://lifereport/reportserver";
+            //string ReportServerUrl = "http://lifereport/reportserver";
             //lifereport/reportserver (url production) : must open soap webservice port
 
             ReportViewer1.ServerReport.ReportServerUrl = new System.Uri(ReportServerUrl);

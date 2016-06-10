@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportViewer.aspx.cs" Inherits="FBISumreport.ReportViewer" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Register src="UC/Calendar.ascx" tagname="Calendar" tagprefix="uc1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -8,7 +10,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" ></asp:ToolkitScriptManager>          
+        
         <div style="width: 100%; text-align: center;">
             <asp:Label ID="lblReportHeader" runat="server">รายงานผลการดำเนินงานเงินฝากสงเคราะห์ชีวิต</asp:Label>
         </div>
@@ -32,10 +35,12 @@
                         <asp:DropDownList ID="ddlProvince" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvince_SelectedIndexChanged" CssClass="dropDownList"></asp:DropDownList></td>
                     <td>วันที่ :</td>
                     <td>
-                        &nbsp;</td>
+                        <uc1:Calendar ID="txtDateFrom" runat="server" />
+                    </td>
                     <td>ถึง :</td>
                     <td>
-                        &nbsp;</td>
+                        <uc1:Calendar ID="txtDateTo" runat="server" />
+                    </td>
                 </tr>
                 <tr>
                     <td>สาขา :</td>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -169,7 +170,8 @@ namespace FBISumreport
 
             string reportName = "CommissionFBIRate";
             string reportPath = "BaaclifeReport";
-            string ReportServerUrl = "http://lifeuatdb/ReportServer";
+            string ReportServerUrl = ConfigurationSettings.AppSettings["ServerUrl"].ToString();
+            //string ReportServerUrl = "http://lifeuatdb/ReportServer";
             //string ReportServerUrl = "http://lifereport/reportserver";
             //lifereport/reportserver (url production) : must open soap webservice port
 

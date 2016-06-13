@@ -184,7 +184,7 @@ namespace FBISumreport
                 //    + strDate.Substring(3, 2)+"/"
                 //    + strDate.Substring(0, 2);
                 DateTime _date = DateTime.Parse(strDate, th);
-                _date.AddDays(1);
+                _date = _date.AddDays(1);
                 string[] _strFormatDate = _date.ToString().Split('/');
                 int _Year = int.Parse(_strFormatDate[2].Substring(0, 4));
                 //_date = _date.AddYears(-543);

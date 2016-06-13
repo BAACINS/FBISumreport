@@ -164,7 +164,8 @@ namespace FBISumreport
             //ReportSearchParam reportParam = UCReportSearch1.GetSearchField();
             C004_Calculator calculator = new C004_Calculator();
             DateFrom = calculator.SetFormatdate(txtDateFrom.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
-            DateTo = calculator.SetFormatdate(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
+            //where < จึงต้องใช้ DateTo + 1
+            DateTo = calculator.SetFormatdateTo(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
 
             string reportName = "CommissionFBIRate";
             string reportPath = "BaaclifeReport";

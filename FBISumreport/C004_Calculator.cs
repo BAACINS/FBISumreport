@@ -148,6 +148,43 @@ namespace FBISumreport
                 //    + strDate.Substring(3, 2)+"/"
                 //    + strDate.Substring(0, 2);
                 DateTime _date = DateTime.Parse(strDate, th);
+
+                string[] _strFormatDate = _date.ToString().Split('/');
+                int _Year = int.Parse(_strFormatDate[2].Substring(0, 4));
+                //_date = _date.AddYears(-543);
+                if (type == 0)
+                {
+                    //date = DateTime.Parse(strDate, CultureInfo.GetCultureInfo("en-GB"));
+                    if (_Year > 2400)
+                        _date = _date.AddYears(-543);
+                    else if (_Year < 1600)
+                        _date = _date.AddYears(543);
+                }
+                else
+                {
+                    //date = DateTime.Parse(strDate, CultureInfo.GetCultureInfo("th-TH")); 
+                    if (_Year < 2400)
+                        _date = _date.AddYears(543);
+                    else if (_Year > 3000)
+                        _date = _date.AddYears(-543);
+                }
+                return _date;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DateTime SetFormatdateTo(string strDate, int type)// 0 AD,1 BE
+        {
+            try
+            {
+                //string strFormatDate = strDate.Substring(6, 4)+"/"
+                //    + strDate.Substring(3, 2)+"/"
+                //    + strDate.Substring(0, 2);
+                DateTime _date = DateTime.Parse(strDate, th);
+                _date.AddDays(1);
                 string[] _strFormatDate = _date.ToString().Split('/');
                 int _Year = int.Parse(_strFormatDate[2].Substring(0, 4));
                 //_date = _date.AddYears(-543);

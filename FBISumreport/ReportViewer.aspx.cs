@@ -221,6 +221,8 @@ namespace FBISumreport
 
             ReportViewer1.ServerReport.SetParameters(parameters);
             ReportViewer1.ServerReport.Refresh();
+
+            lblRemark.Visible = true;
         }
     }
 }

@@ -62,6 +62,7 @@
             <asp:Button ID="btnViewReport" runat="server" Text="View" Width="76px" OnClick="btnViewReport_Click" Visible="false"/>
         </div>
         <div>
+            <asp:Label ID="lblRemark" runat="server" Text="หมายเหตุ : ประเภท ธกสมอบรักปีที่ 2 หมายถึงปีต่ออายุ"></asp:Label>
             <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Height="100%"
                 Font-Size="8pt" InteractiveDeviceInfos="(Collection)"
                 WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%"

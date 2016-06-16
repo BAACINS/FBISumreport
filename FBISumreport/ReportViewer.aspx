@@ -59,10 +59,13 @@
             </table>
         </div>
         <div>
-            <asp:Button ID="btnViewReport" runat="server" Text="View" Width="76px" OnClick="btnViewReport_Click" Visible="false"/>
+            <asp:Button ID="btnViewReport" runat="server" Text="View" Width="76px" OnClick="btnViewReport_Click" Visible="false" />
+        </div>
+        <div style="font-size:25px; font-family:'TH Sarabun New','TH SarabunPSK','angsana new','Cordia New'; color:red; text-align:center;">
+            <asp:Label ID="lblRemark" runat="server" Text="หมายเหตุ : ประเภท ธกส มอบรักปีที่ 2 หมายถึง ปีต่ออายุ" Visible="false"></asp:Label>
         </div>
         <div>
-            <asp:Label ID="lblRemark" runat="server" Text="หมายเหตุ : ประเภท ธกส มอบรักปีที่ 2 หมายถึงปีต่ออายุ" Visible="false"></asp:Label>
+
             <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Height="100%"
                 Font-Size="8pt" InteractiveDeviceInfos="(Collection)"
                 WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%"

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -160,30 +161,32 @@ namespace FBISumreport
         }
 
         protected void btnPreview_Click(object sender, EventArgs e)
-        {
-            //http://lifereport/ReportServer/Pages/ReportViewer.aspx //url test report
+        {          
             //ReportSearchParam reportParam = UCReportSearch1.GetSearchField();
             C004_Calculator calculator = new C004_Calculator();
             DateFrom = calculator.SetFormatdate(txtDateFrom.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
-            //where < จึงต้องใช้ DateTo + 1
+
+            //WHERE < จึงต้องใช้ DATETO + 1
             DateTo = calculator.SetFormatdateTo(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
 
-            string reportName = "CommissionFBIRate";
-            string reportPath = "BaaclifeReport";
-            string ReportServerUrl = ConfigurationSettings.AppSettings["ServerUrl"].ToString();
-            //string ReportServerUrl = "http://lifeuatdb/ReportServer";
-            //string ReportServerUrl = "http://lifereport/reportserver";
-            //lifereport/reportserver (url production) : must open soap webservice port
+            string reportName = WebConfigurationManager.AppSettings["reportName"].ToString();
+            string reportPath = WebConfigurationManager.AppSettings["reportPath"].ToString();
+            string ReportServerUrl = WebConfigurationManager.AppSettings["ServerUrl"].ToString();
 
             ReportViewer1.ServerReport.ReportServerUrl = new System.Uri(ReportServerUrl);
 
-
+            //****------ REPORT NOTE : 
+            //1.http://lifereport/ReportServer/Pages/ReportViewer.aspx //url test report
+            //2.string ReportServerUrl = "http://lifeuatdb/ReportServer";
+            //3.string ReportServerUrl = "http://lifereport/reportserver";
+            //4.lifereport/reportserver (url production) : MUST OPEN SOAP WEBSERVICE PORT
+      
             //while (ReportViewer.ServerReport.IsDrillthroughReport)
             //{
             //    ReportViewer.PerformBack();
             //}
 
-            //// Could also be set to the selection of a ListBox.
+            // COULD ALSO BE SET TO THE SELECTION OF A LISTBOX.
             string strReport = string.Format("/{0}/{1}", reportPath, reportName);
             ReportViewer1.ServerReport.ReportPath = strReport;
 

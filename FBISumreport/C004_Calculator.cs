@@ -183,11 +183,12 @@ namespace FBISumreport
                 //string strFormatDate = strDate.Substring(6, 4)+"/"
                 //    + strDate.Substring(3, 2)+"/"
                 //    + strDate.Substring(0, 2);
-                DateTime _date = DateTime.Parse(strDate, th);
-                _date = _date.AddDays(1);
+                DateTime _date = DateTime.Parse(strDate+" 23:59:59", th);
+                //_date = _date.AddDays(1);
                 string[] _strFormatDate = _date.ToString().Split('/');
                 int _Year = int.Parse(_strFormatDate[2].Substring(0, 4));
                 //_date = _date.AddYears(-543);
+                //_date = _date.AddHours(23);
                 if (type == 0)
                 {
                     //date = DateTime.Parse(strDate, CultureInfo.GetCultureInfo("en-GB"));

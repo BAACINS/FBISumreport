@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -76,9 +77,15 @@ namespace FBISumreport.UC
                     //this.txtCalendar.Text = DateTime.Now.ToString("dd/MM/yyyy");
                     this.txtCalendar.Attributes.Add("readonly", "readonly");
                     //this.CalendarExtender1.
+
                 }
                 catch { }
             }
+            //CultureInfo th = System.Globalization.CultureInfo.GetCultureInfo("th-TH");
+            //System.Threading.Thread.CurrentThread.CurrentCulture = th;
+            //System.Threading.Thread.CurrentThread.CurrentUICulture = th;
+
+            //CalendarExtender1.
         }
 
         protected void txtCalendar_TextChanged(object sender, EventArgs e)

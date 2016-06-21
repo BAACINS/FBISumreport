@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" ></asp:ToolkitScriptManager>          
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptLocalization="True" EnableScriptGlobalization="True" ></asp:ToolkitScriptManager>          
         
         <div style="margin: 0 auto; max-width: 975px;" class="header" >
            <h1>รายงานผลการดำเนินงานเงินฝากสงเคราะห์ชีวิต</h1>

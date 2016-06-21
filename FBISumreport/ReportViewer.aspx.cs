@@ -29,13 +29,12 @@ namespace FBISumreport
                 GetPlanCategories();
                 GetPlanAssurance();
 
-                string DateNow = DateTime.Now.ToString("dd/MM/yyyy", us);
+                string DateNow = DateTime.Now.ToString("dd/MM/yyyy", th);
                 txtDateFrom.TextDate = DateNow;
                 txtDateTo.TextDate = DateNow;
             }
-            
-
-            
+            System.Threading.Thread.CurrentThread.CurrentCulture = th;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = th;
         }
 
         #region Methods
@@ -101,6 +100,7 @@ namespace FBISumreport
 
         protected void btnViewReport_Click(object sender, EventArgs e)
         {
+            //Method ไม่ได้ใช้
             //http://lifereport/ReportServer/Pages/ReportViewer.aspx //url test report
             //ReportSearchParam reportParam = UCReportSearch1.GetSearchField();
 
@@ -161,13 +161,16 @@ namespace FBISumreport
         }
 
         protected void btnPreview_Click(object sender, EventArgs e)
-        {          
+        {
+            System.Threading.Thread.CurrentThread.CurrentCulture = us;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = us;
+
             //ReportSearchParam reportParam = UCReportSearch1.GetSearchField();
             C004_Calculator calculator = new C004_Calculator();
             DateFrom = calculator.SetFormatdate(txtDateFrom.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
 
             //WHERE < จึงต้องใช้ DATETO + 1
-            DateTo = calculator.SetFormatdateTo(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd");
+            DateTo = calculator.SetFormatdateTo(txtDateTo.TextDate.ToString(), 0).ToString("yyyy-MM-dd HH:mm:ss");
 
             string reportName = WebConfigurationManager.AppSettings["reportName"].ToString();
             string reportPath = WebConfigurationManager.AppSettings["reportPath"].ToString();
@@ -208,18 +211,11 @@ namespace FBISumreport
             parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("PlanCode", ddlCategory.SelectedValue.ToString()));
             parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("PlanCodeName", ddlCategory.SelectedItem.Text));
             parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("StartDate", DateFrom));
-            DateTime endDate = DateTime.Now;//reportParam.EndDate.Value.AddDays(1).AddMilliseconds(-1);
+            //DateTime endDate = DateTime.Now;//reportParam.EndDate.Value.AddDays(1).AddMilliseconds(-1);
             parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("EndDate", DateTo));
 
-            bool isBranch = true;//BaacLifeUtil.checkBranch(division);
-                                 //if (isBranch)
-                                 //{
-            parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("DivisionName", "division.DivisionName"));
-            //}
-            //else
-            //{
-            //    parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("DivisionName", "reportParam.DivisionCodeName"));
-            //}
+            bool isBranch = true;
+            parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("DivisionName", ddlBranch.SelectedItem.Text));
             parameters.Add(new Microsoft.Reporting.WebForms.ReportParameter("IsBranch", isBranch.ToString()));
 
             ReportViewer1.ServerReport.SetParameters(parameters);
@@ -227,6 +223,9 @@ namespace FBISumreport
 
 
             lblRemark.Visible = true;
+
+            System.Threading.Thread.CurrentThread.CurrentCulture = th;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = th;
         }
     }
 }

@@ -43,6 +43,6 @@
 </table>
 <div style="display: none">
     <asp:CalendarExtender ID="CalendarExtender1" runat="server" Enabled="True" TargetControlID="txtCalendar"
-        PopupButtonID="imgCalendar" Format="dd/MM/yyyy" OnClientShowing="checkDate" >
+        PopupButtonID="imgCalendar" Format="dd/MM/yyyy" OnClientShowing="checkDate" FirstDayOfWeek="Sunday">
     </asp:CalendarExtender>
 </div>

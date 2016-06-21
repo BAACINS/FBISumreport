@@ -29,9 +29,9 @@ namespace FBISumreport
                 GetPlanCategories();
                 GetPlanAssurance();
 
-                string DateNow = DateTime.Now.ToString("dd/MM/yyyy", us);
-                txtDateFrom.TextDate = DateNow;
-                txtDateTo.TextDate = DateNow;
+                //string DateNow = DateTime.Now.ToString("dd/MM/yyyy", th);
+                //txtDateFrom.TextDate = DateNow;
+                //txtDateTo.TextDate = DateNow;
             }
             
 

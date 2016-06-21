@@ -14,7 +14,7 @@
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" ></asp:ToolkitScriptManager>          
         
         <div style="margin: 0 auto; max-width: 975px;" class="header" >
-           <h1>รายงานสรุปค่าตอบแทนโครงการเงินฝากสงเคราะห์ชีวิต</h1>
+           <h1>รายงานผลการดำเนินงานเงินฝากสงเคราะห์ชีวิต</h1>
         </div>
        
         <br />
